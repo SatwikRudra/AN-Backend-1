@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/style.css">
+    <title>Document</title>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light" style="   background: #563d7c !important;">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ml-auto" >
+      <li class="nav-item active">
+        <a class="nav-link" href="/" style="color:#fff !important;">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/login" style="color:#fff !important;">Login</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/register" style="color:#fff !important;">Register</a>
+    
+      </li>
+    </ul>
+  </div>
+</nav>
+  
+  <div class="container"><br><br>
+    <h6>Username: {{user.userName}}</h6>
+        <h6>Email: {{user.userEmail}}</h6>
+        <h6>Phone Number: {{user.userPhno}}</h6>
+  </div>
+  <div class="container mt-4">
+<div class="card" style="width: 18rem;">
+<div class="card-header"> <h3>Profile</h3></div>
+  <div class="card-body">
+   <form action="/auth/profile" method="post">
+         <div class="form-group">
+    <label for="exampleInputEmail1">First Name</label>
+    <input type="text" class="form-control" id="exampleInputEmail1" value="{{user.userFirst}}" name="firstname" aria-describedby="emailHelp" placeholder="Enter First Name">
+
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Last Name</label>
+    <input type="text" class="form-control" id="exampleInputEmail1" value="{{user.userLast}}" name="lastname" aria-describedby="emailHelp" placeholder="Enter Last Name">
+    
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email</label>
+    <input type="text" class="form-control" id="exampleInputEmail1" value="{{user.userEmail}}" name="email" aria-describedby="emailHelp" placeholder="Enter Email">
+  </div>
+
+ <div class="form-group">
+ <label for="mob_no" class="col-md-3 control-label">Profile Image</label>
+<div class="col-sm-9">
+ <input class="form-control" type="file" name="uploaded_image" accept=""/>
+  </div>
+
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Phone Number</label>
+    <input type="tel" class="form-control" id="exampleInputPassword1" value="{{user.userPhno}}" name="phone" placeholder="Enter Phone Number">
+  </div>
+
+    <div class="form-group">
+    <label for="exampleSelect2">Select Known Language</label>
+    <select name="language" class="form-control" id="exampleSelect2">
+      <option>{{user.userLanguage}}</option>
+      <option>Telugu</option>
+      <option>Hindi</option>
+      <option>English</option>
+      <option>Tamil</option>
+    </select>
+  </div>
+
+   <div class="form-group">
+    <label for="exampleInputPassword1">Date Of Birth</label>
+    <input type="date" class="form-control" id="exampleInputPassword1" value="{{user.userDob}}" name="dob"   placeholder="Enter Languages">
+  </div>
+
+    <div class="form-group">
+    <label for="exampleSelect2">Example multiple select</label>
+    <select name="gender" class="form-control" id="exampleSelect2">
+      <option>{{user.userGender}}</option>
+      <option>Male</option>
+      <option>Others</option>
+      <option>Female</option>
+    </select>
+  </div>
+  
+  <input type="submit" class="btn btn-primary" value="Update">
+</form>
+  </div>
+ 
+</div>
+</body>
+</html>
